@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["4T3HN73CF5.com.peerassembly.DueAgain"],
+        "components": [
+          { "/": "/invite/*", "comment": "Invite redemption deep links" }
+        ]
+      }
+    ]
+  }
+}
