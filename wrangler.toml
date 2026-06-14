@@ -1,0 +1,10 @@
+# Cloudflare Pages config for dueagain.com.
+# The repo root is the static site; functions/ is auto-compiled into Pages
+# Functions. The two vars below are public-safe (publishable Supabase key;
+# all authorization is server-side via RLS) and feed functions/invite/[token].js.
+name = "dueagain"
+pages_build_output_dir = "."
+
+[vars]
+SUPABASE_URL = "https://lqakhqhaxgowkoklhmvn.supabase.co"
+SUPABASE_ANON_KEY = "sb_publishable_OP9nde1y5D_PqkYabGRP9g_uMO0XlGb"
