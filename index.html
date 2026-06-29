@@ -1,53 +1,457 @@
 <!doctype html>
-<html lang="en" data-light-theme="light" data-dark-theme="dark">
+<html lang="en">
   <head>
-    <base href="./" />
-    <meta property="og:site_name" content="Due Again" />
-    <meta property="og:title" content="Home" />
-    <meta name="twitter:title" content="Home" />
-    <meta property="og:url" content="https://example.com/" />
-    <meta name="twitter:domain" content="example.com" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:dnt" content="on" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="Developer" />
-    <meta name="generator" content="Ignite v0.6.0" />
-    <title>Home</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/bootstrap-icons.min.css" rel="stylesheet" />
-    <link href="css/ignite-core.min.css" rel="stylesheet" />
-    <link href="https://example.com/" rel="canonical" />
-    <link href="images/favicon.png" rel="icon" />
-    <link href="css/styles.css" rel="stylesheet" />
-    <style>
-:root {
-    --primary-color: #2563eb;
-    --primary-rgb: 37, 99, 235;
-    --font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    color-scheme: light dark;
-}
-</style>
+    <title>Due Again — Reminders for recurring home, car & garden upkeep</title>
+    <meta
+      name="description"
+      content="Due Again tracks the infrequent maintenance that's easy to forget — replace the water filter, service the car, test the smoke alarms — and reminds you in time. Flexible repeating schedules, a clear completion history, and household sharing."
+    />
+    <link rel="canonical" href="https://dueagain.com/" />
+    <meta name="theme-color" content="#6d4fd6" />
+
+    <!-- Social -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Due Again" />
+    <meta property="og:title" content="Due Again — Never forget recurring upkeep again" />
+    <meta
+      property="og:description"
+      content="The calm reminder app for infrequent maintenance — and the household that shares it."
+    />
+    <meta property="og:url" content="https://dueagain.com/" />
+    <meta property="og:image" content="https://dueagain.com/images/app-icon.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Due Again — Never forget recurring upkeep again" />
+    <meta
+      name="twitter:description"
+      content="The calm reminder app for infrequent maintenance — and the household that shares it."
+    />
+    <meta name="twitter:image" content="https://dueagain.com/images/app-icon.png" />
+
+    <!-- Smart App Banner on iOS Safari -->
+    <meta name="apple-itunes-app" content="app-id=6779137593" />
+
+    <link rel="icon" href="images/favicon.png" />
+    <link rel="apple-touch-icon" href="images/app-icon.png" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Due Again",
+        "operatingSystem": "iOS",
+        "applicationCategory": "ProductivityApplication",
+        "description": "Track infrequent recurring maintenance tasks with reliable reminders and household sharing.",
+        "url": "https://dueagain.com/",
+        "downloadUrl": "https://apps.apple.com/app/id6779137593",
+        "offers": [
+          { "@type": "Offer", "price": "0", "priceCurrency": "USD", "name": "Free" },
+          { "@type": "Offer", "price": "2.99", "priceCurrency": "USD", "name": "Due Again Pro (monthly)" },
+          { "@type": "Offer", "price": "19.99", "priceCurrency": "USD", "name": "Due Again Pro (annual)" }
+        ]
+      }
+    </script>
   </head>
-  <body data-site-classes="site-shell">
-    <main class="site-main">
-      <div class="ig-main-content">
-        <div id="hero" class="hero hero-centered">
-          <div class="container">
-            <div class="hero-content">
-              <img src="images/app-icon.png" alt="App Icon" class="hero-app-icon" />
-              <h1 class="hero-title">Stay Organized with Due Again!</h1>
-              <p class="hero-subtitle">Keep track of your maintenance tasks, share with others, and mark them complete with ease.</p>
-              <p class="hero-subtitle">Coming soon to the App Store.</p>
-              <div class="hero-cta">
-                <a href="https://apps.apple.com/app/id6779137593" class="store-badge-link"><img src="images/app-store-preorder-black.svg" alt="Pre-order on the App Store" class="store-badge store-badge-light-mode" /><img src="images/app-store-preorder-white.svg" alt="Pre-order on the App Store" class="store-badge store-badge-dark-mode" /></a>
+
+  <body>
+    <!-- ===== Nav ===== -->
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="/">
+          <img src="images/app-icon.png" alt="Due Again app icon" />
+          <span>Due Again</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#schedules">Schedules</a>
+          <a href="#sharing">Sharing</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a class="nav-cta" href="https://apps.apple.com/app/id6779137593">Get the app</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- ===== Hero ===== -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">For home, car &amp; garden upkeep</span>
+            <h1 class="hero-title">
+              Never forget what's <span class="accent">due again</span>.
+            </h1>
+            <p class="hero-sub">
+              Some chores only come around once or twice a year — replace the water
+              filter, service the car, test the smoke alarms. Due Again remembers them
+              for you and reminds you in time, so nothing slips through the cracks.
+            </p>
+            <div class="hero-actions">
+              <a href="https://apps.apple.com/app/id6779137593" aria-label="Download Due Again on the App Store">
+                <img
+                  class="store-badge"
+                  src="images/app-store-download-black.svg"
+                  alt="Download on the App Store"
+                />
+              </a>
+              <a class="btn btn-ghost" href="#features">See how it works</a>
+            </div>
+            <p class="hero-note">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Free for up to 4 tasks · no account required to start</span>
+            </p>
+          </div>
+
+          <div class="hero-visual">
+            <div class="phone phone-tilt">
+              <div class="phone-screen">
+                <div class="app-status"><span>9:41</span><span>􀙇 􀛨 􀋊</span></div>
+                <div class="app-head">
+                  <div class="hello">Good morning 👋</div>
+                  <div class="date">Today, June 29</div>
+                  <div class="app-summary">
+                    <div class="summary-pill"><div class="n">1</div><div class="l">Overdue</div></div>
+                    <div class="summary-pill"><div class="n">2</div><div class="l">This week</div></div>
+                    <div class="summary-pill"><div class="n">9</div><div class="l">Upcoming</div></div>
+                  </div>
+                </div>
+                <div class="app-body">
+                  <div class="app-section-label">Needs attention</div>
+                  <div class="task-row">
+                    <div class="task-ic cat-home">🏠</div>
+                    <div class="task-main">
+                      <div class="t">Replace water filter</div>
+                      <div class="m">Home · every 3 months</div>
+                    </div>
+                    <div class="task-due due-over">2d late</div>
+                  </div>
+                  <div class="app-section-label">Coming up</div>
+                  <div class="task-row">
+                    <div class="task-ic cat-car">🚗</div>
+                    <div class="task-main">
+                      <div class="t">Book annual car service</div>
+                      <div class="m">Car · reminds 14d ahead</div>
+                    </div>
+                    <div class="task-due due-soon">Fri</div>
+                  </div>
+                  <div class="task-row">
+                    <div class="task-ic cat-home">🏠</div>
+                    <div class="task-main">
+                      <div class="t">Test smoke alarms</div>
+                      <div class="m">Home · every 6 months</div>
+                    </div>
+                    <div class="task-due due-ok">Jul 4</div>
+                  </div>
+                  <div class="task-row">
+                    <div class="task-ic cat-garden">🌱</div>
+                    <div class="task-main">
+                      <div class="t">Sharpen garden tools</div>
+                      <div class="m">Garden · once a year</div>
+                    </div>
+                    <div class="task-due due-ok">Jul 9</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-card">
+              <div class="fic">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </div>
+              <div>
+                <div class="ft">Replace water filter</div>
+                <div class="fm">Reminder · due today</div>
               </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- ===== Trust strip ===== -->
+      <div class="trust">
+        <div class="container trust-row">
+          <span class="trust-chip"><span class="e">🏠</span> Home</span>
+          <span class="trust-chip"><span class="e">🚗</span> Car</span>
+          <span class="trust-chip"><span class="e">🌱</span> Garden</span>
+          <span class="trust-chip"><span class="e">👤</span> Personal</span>
+          <span class="trust-chip"><span class="e">📋</span> Other</span>
+        </div>
       </div>
+
+      <!-- ===== Features ===== -->
+      <section class="section" id="features">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Why Due Again</span>
+            <h2>Built for the tasks you only do twice a year</h2>
+            <p>
+              Infrequent maintenance is easy to forget precisely because it's
+              infrequent. Due Again keeps that knowledge in one place and surfaces it
+              at exactly the right moment.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <div class="feature">
+              <div class="ficon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/></svg>
+              </div>
+              <h3>Schedules for anything</h3>
+              <p>Fixed calendar dates, "X months after I last did it", or simple one-offs. Whatever cadence the job follows, Due Again tracks it.</p>
+            </div>
+            <div class="feature">
+              <div class="ficon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+              </div>
+              <h3>Reminders that reach you</h3>
+              <p>Set how many days of lead time you want, then snooze or skip an occurrence without ever breaking the underlying schedule.</p>
+            </div>
+            <div class="feature">
+              <div class="ficon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/><path d="M21 21v-2a4 4 0 0 0-3-3.87"/></svg>
+              </div>
+              <h3>Share with your household</h3>
+              <p>Invite family or housemates with a single link, as viewers or editors. When one person marks a job done, everyone's reminders update.</p>
+            </div>
+            <div class="feature">
+              <div class="ficon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <h3>A clear history</h3>
+              <p>Every completion is recorded with who did it, when, and notes — which part, what was done — so nothing's guessed at or done twice.</p>
+            </div>
+            <div class="feature">
+              <div class="ficon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/></svg>
+              </div>
+              <h3>Organized by category</h3>
+              <p>Home, Car, Garden, Personal and Other. Filter and search so the right jobs are always easy to find at a glance.</p>
+            </div>
+            <div class="feature">
+              <div class="ficon">
+                <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8v13H3V8"/><path d="M1 3h22v5H1z"/><path d="M10 12h4"/></svg>
+              </div>
+              <h3>Stays out of your way</h3>
+              <p>Archive what you no longer track — the car was sold, the appliance replaced — while keeping its full history in case it ever matters again.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Schedules ===== -->
+      <section class="section section-alt" id="schedules">
+        <div class="container">
+          <div class="split">
+            <div class="split-text">
+              <span class="eyebrow">Repeating, your way</span>
+              <h2>Two ways to repeat — plus one-offs</h2>
+              <p>
+                Real maintenance doesn't follow one rule. Some jobs are anchored to the
+                calendar; others depend on when you last got around to them. Due Again
+                handles both, and quietly recomputes the next due date whenever you
+                complete, edit, or skip.
+              </p>
+              <ul class="split-list">
+                <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Missed occurrences never pile up</strong> — a fixed task collapses into the single next occurrence instead of a backlog of overdue dates.</span></li>
+                <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Complete early any time</strong> — the schedule simply recalculates from there.</span></li>
+              </ul>
+            </div>
+            <div class="split-visual">
+              <div class="sched-cards">
+                <div class="sched-card">
+                  <span class="stag">Fixed schedule</span>
+                  <h3>Service the car every 12 months</h3>
+                  <p>Anchored to the calendar. The cadence stays put no matter when you actually book it in.</p>
+                </div>
+                <div class="sched-card">
+                  <span class="stag">Completion-based</span>
+                  <h3>Replace the filter every 3 months after the last change</h3>
+                  <p>The next due date shifts based on when you really finished — perfect for "X months after I last did it" jobs.</p>
+                </div>
+                <div class="sched-card">
+                  <span class="stag">One-off</span>
+                  <h3>Re-grout the bathroom by spring</h3>
+                  <p>A single task that's simply done once it's complete. No repeat, no fuss.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Sharing ===== -->
+      <section class="section" id="sharing">
+        <div class="container">
+          <div class="split reverse">
+            <div class="split-text">
+              <span class="eyebrow">Household sharing</span>
+              <h2>Share the load — don't leave it to one person</h2>
+              <p>
+                Upkeep is rarely a solo job. Invite the people who share your home with
+                a single link and pick what each can do. When anyone completes a shared
+                task, everyone is notified and every reminder updates to the new due date.
+              </p>
+              <ul class="split-list">
+                <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Owner</strong> manages sharing and can delete the task.</span></li>
+                <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Editors</strong> can complete and edit; <strong>viewers</strong> can follow along and see the history.</span></li>
+                <li><span class="tick"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span>One invite link opens straight into the app — or previews the task for anyone who hasn't installed it yet.</span></li>
+              </ul>
+            </div>
+            <div class="split-visual">
+              <div class="share-stack">
+                <div class="share-card">
+                  <div class="avatar" style="background:#6d4fd6">YOU</div>
+                  <div><div class="sname">You</div><div class="role">Created this task</div></div>
+                  <span class="role-pill role-owner">Owner</span>
+                </div>
+                <div class="share-card">
+                  <div class="avatar" style="background:#2563c9">AM</div>
+                  <div><div class="sname">Alex Morgan</div><div class="role">Can complete &amp; edit</div></div>
+                  <span class="role-pill role-editor">Editor</span>
+                </div>
+                <div class="share-card">
+                  <div class="avatar" style="background:#c2570f">JC</div>
+                  <div><div class="sname">Jamie Chen</div><div class="role">Can view history</div></div>
+                  <span class="role-pill role-viewer">Viewer</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Pricing ===== -->
+      <section class="section section-alt" id="pricing">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Simple pricing</span>
+            <h2>Start free. Upgrade when you grow.</h2>
+            <p>Track your first few tasks free, forever. When your list — or your household — gets bigger, Due Again Pro removes every limit.</p>
+          </div>
+
+          <div class="price-grid">
+            <div class="price-card">
+              <div class="plan">Free</div>
+              <div class="amount">$0</div>
+              <div class="sub">Everything you need to get started.</div>
+              <ul class="price-list">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d4fd6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Up to 4 active tasks</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d4fd6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Share with 1 person</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d4fd6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> All schedule types &amp; reminders</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6d4fd6" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Full completion history</li>
+              </ul>
+              <a class="btn btn-ghost btn-block" href="https://apps.apple.com/app/id6779137593">Download free</a>
+            </div>
+
+            <div class="price-card pro">
+              <span class="badge-best">Best value</span>
+              <div class="plan">Due Again Pro</div>
+              <div class="amount">$2.99<small> / mo</small></div>
+              <div class="sub">or $19.99 / year — save over 40%</div>
+              <ul class="price-list">
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Unlimited tasks</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Unlimited household sharing</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Everything in Free</li>
+                <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Supports ongoing development</li>
+              </ul>
+              <a class="btn btn-on-grad btn-block" href="https://apps.apple.com/app/id6779137593">Get Due Again Pro</a>
+            </div>
+          </div>
+          <p class="price-foot">Subscriptions are billed through the App Store and can be cancelled anytime. Prices may vary by region.</p>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="section" id="faq">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Questions</span>
+            <h2>Good to know</h2>
+          </div>
+          <div class="faq">
+            <details open>
+              <summary>What kind of tasks is Due Again for?</summary>
+              <p>The infrequent, recurring upkeep that's easy to forget — replacing a water filter every few months, servicing the car each year, testing smoke alarms, bleeding the radiators, descaling the kettle. Anything whose interval is long enough that you can't keep it in your head.</p>
+            </details>
+            <details>
+              <summary>What's the difference between fixed and completion-based schedules?</summary>
+              <p>A <strong>fixed</strong> schedule anchors each occurrence to the calendar — every 12 months from the start date — so the cadence stays put regardless of when you actually do it. A <strong>completion-based</strong> schedule measures the next period from your last completion, so it shifts to "X months after I last did it." You can also create simple one-off tasks.</p>
+            </details>
+            <details>
+              <summary>Do I need an account to start?</summary>
+              <p>No. You can start tracking tasks right away. You only sign in when you want to share tasks with someone or sync across devices.</p>
+            </details>
+            <details>
+              <summary>How does household sharing work?</summary>
+              <p>The owner of a task sends an invite link. The person you invite can join as a viewer (sees the task and its history) or an editor (can also complete and edit it). When anyone completes a shared task, everyone is notified and all reminders update to the new due date.</p>
+            </details>
+            <details>
+              <summary>What do I get for free, and what does Pro add?</summary>
+              <p>Free covers up to 4 active tasks and sharing with 1 person, with all schedule types, reminders and full history included. <strong>Due Again Pro</strong> removes those limits — unlimited tasks and unlimited household sharing — for $2.99/month or $19.99/year.</p>
+            </details>
+            <details>
+              <summary>What platforms is Due Again on?</summary>
+              <p>Due Again is available on iPhone, with reminders delivered as native notifications. It's built on a secure backend so sharing and sync work reliably across everyone in your household.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA band ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="cta-band">
+            <h2>Stop trusting your memory for the things that matter twice a year.</h2>
+            <p>Let Due Again tell you when they're due again.</p>
+            <div class="badge-row">
+              <a href="https://apps.apple.com/app/id6779137593" aria-label="Download Due Again on the App Store">
+                <img class="store-badge" src="images/app-store-download-white.svg" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/ignite-core.js"></script>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="/">
+              <img src="images/app-icon.png" alt="Due Again app icon" />
+              <span>Due Again</span>
+            </a>
+            <p class="footer-blurb">The calm reminder app for the infrequent maintenance that keeps a home, car and garden in good shape — shared with the whole household.</p>
+            <div class="badge-row" style="margin-top:18px">
+              <a href="https://apps.apple.com/app/id6779137593" aria-label="Download Due Again on the App Store">
+                <img class="store-badge" src="images/app-store-download-black.svg" alt="Download on the App Store" />
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4>Product</h4>
+            <a href="#features">Features</a>
+            <a href="#schedules">Schedules</a>
+            <a href="#sharing">Sharing</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <a href="/support.html">Support</a>
+            <a href="/privacy.html">Privacy Policy</a>
+            <a href="mailto:hello@dueagain.com">Contact</a>
+            <a href="https://apps.apple.com/app/id6779137593">App Store</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>© 2026 Due Again. All rights reserved.</span>
+          <span>Made for households that share the upkeep.</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

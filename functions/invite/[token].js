@@ -96,7 +96,7 @@ function shell({ title, description, body }) {
   <meta name="twitter:title" content="${safeTitle}" />
   <meta name="twitter:description" content="${safeDesc}" />
   <style>
-    :root { --primary: #2563eb; color-scheme: light dark; }
+    :root { --primary: #6d4fd6; color-scheme: light dark; }
     * { box-sizing: border-box; }
     body {
       margin: 0; min-height: 100vh; display: flex; align-items: center;
@@ -127,9 +127,12 @@ function shell({ title, description, body }) {
     }
     .task h2 { font-size: 20px; margin: 0; line-height: 1.3; }
     .cta {
-      display: inline-block; background: var(--primary); color: #fff;
+      display: inline-block;
+      background: linear-gradient(135deg, #6d4fd6 0%, #9a6ff0 55%, #c4a4f4 100%);
+      color: #fff;
       text-decoration: none; font-weight: 600; font-size: 17px;
-      padding: 14px 28px; border-radius: 12px;
+      padding: 14px 28px; border-radius: 999px;
+      box-shadow: 0 10px 24px rgba(109, 79, 214, 0.35);
     }
     .muted { color: #8e8e93; font-size: 13px; margin-top: 18px; }
   </style>
