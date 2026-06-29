@@ -186,92 +186,33 @@ h1, h2, h3 { line-height: 1.12; letter-spacing: -0.02em; margin: 0; }
 
 .hero-visual { display: flex; justify-content: center; position: relative; }
 
-/* ---------- Phone mockup ---------- */
-.phone {
-  width: 322px;
+/* ---------- Device bezel (real screenshot) ---------- */
+.device {
+  width: 318px;
   flex: none;
-  background: #0f0a1f;
-  border-radius: 44px;
-  padding: 11px;
-  box-shadow: var(--shadow-lg);
+  background: #0d0a18;
+  border-radius: 54px;
+  padding: 13px;
   position: relative;
+  box-shadow:
+    0 0 0 2px #25203a,            /* outer rim highlight */
+    var(--shadow-lg);
 }
-.phone::before { /* notch */
-  content: "";
-  position: absolute;
-  top: 20px; left: 50%; transform: translateX(-50%);
-  width: 120px; height: 26px;
-  background: #0f0a1f;
-  border-radius: 0 0 16px 16px;
-  z-index: 3;
-}
-.phone-screen {
-  background: var(--bg);
-  border-radius: 34px;
+.device-screen {
+  border-radius: 42px;
   overflow: hidden;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
+  background: #000;
+  line-height: 0;
+  /* keep the screen corners crisp against the bezel */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
 }
-.phone-tilt { transform: perspective(1600px) rotateY(-14deg) rotateX(3deg); }
+.device-screen img { width: 100%; height: auto; display: block; }
+.device-tilt { transform: perspective(1700px) rotateY(-13deg) rotateX(3deg); }
 
-/* App UI inside the phone */
-.app-status {
-  height: 50px; flex: none;
-  background: var(--grad);
-  display: flex; align-items: flex-end; justify-content: space-between;
-  padding: 0 20px 8px;
-  color: #fff; font-size: 0.78rem; font-weight: 600;
-}
-.app-head {
-  background: var(--grad);
-  color: #fff;
-  padding: 6px 20px 22px;
-}
-.app-head .hello { font-size: 0.84rem; opacity: 0.9; }
-.app-head .date { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
-.app-summary {
-  display: flex; gap: 10px; margin-top: 16px;
-}
-.summary-pill {
-  flex: 1; background: rgba(255, 255, 255, 0.18);
-  border-radius: 13px; padding: 10px 12px; backdrop-filter: blur(4px);
-}
-.summary-pill .n { font-size: 1.35rem; font-weight: 800; line-height: 1; }
-.summary-pill .l { font-size: 0.7rem; opacity: 0.92; margin-top: 4px; }
-
-.app-body { flex: 1; overflow: hidden; padding: 6px 14px 16px; background: var(--bg); }
-.app-section-label {
-  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.06em; color: var(--ink-3); margin: 16px 4px 8px;
-}
-.task-row {
-  display: flex; align-items: center; gap: 10px;
-  background: var(--card); border: 1px solid var(--line);
-  border-radius: 14px; padding: 11px 12px; margin-bottom: 9px;
-  box-shadow: var(--shadow-sm);
-}
-.task-ic {
-  width: 36px; height: 36px; border-radius: 10px; flex: none;
-  display: flex; align-items: center; justify-content: center; font-size: 1.05rem;
-}
-.task-main { flex: 1; min-width: 0; }
-.task-main .t { font-size: 0.88rem; font-weight: 650; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.task-main .m { font-size: 0.73rem; color: var(--ink-3); margin-top: 1px; }
-.task-due { font-size: 0.68rem; font-weight: 700; padding: 4px 7px; border-radius: 999px; flex: none; }
-.due-over { background: #fdecec; color: #c0392b; }
-.due-soon { background: #fff4e2; color: #b86a07; }
-.due-ok { background: var(--violet-050); color: var(--violet-600); }
-.check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--violet-200); flex: none; }
-
-.cat-home { background: rgba(47,143,107,0.12); color: var(--home); }
-.cat-car { background: rgba(37,99,201,0.12); color: var(--car); }
-.cat-garden { background: rgba(78,154,47,0.12); color: var(--garden); }
-.cat-personal { background: rgba(194,87,15,0.12); color: var(--personal); }
-
-/* Floating mini-card on hero phone */
+/* Floating reminder card over the device */
 .float-card {
   position: absolute;
+  z-index: 2;
   left: -28px; bottom: 64px;
   background: #fff;
   border-radius: 16px;
